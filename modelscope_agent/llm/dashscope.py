@@ -142,7 +142,7 @@ class DashScopeLLM(BaseChatModel):
             for chunk in response:
                 # if hasattr(chunk.output, 'usage'):
                 if not chunk.usage.get('total_tokens'):
-                    total_tokens = chunk.usage.input_tokens+chunk.usage.output_tokens
+                    total_tokens = chunk.usage.input_tokens + chunk.usage.output_tokens
                 else:
                     total_tokens = chunk.usage.total_tokens
                 self.last_call_usage_info = {
